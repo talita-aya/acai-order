@@ -1,14 +1,16 @@
 import { Switch, Route } from 'react-router';
 import React from 'react';
 
-import ChooseAcai from './pages/ChooseAcai/index';
-import Personalize from './pages/Personalize/index';
+import Escolher from './pages/Escolher/index';
+import Personalizar from './pages/Personalizar/index';
+import PedidoFinal from './pages/PedidoFinal/index';
 
 function Routes() {
   return (
     <Switch>
-      <Route exact path="/" component={ChooseAcai} />
-      <Route exact path="/personalize" component={Personalize} />
+      <Route exact path="/" component={Escolher} />
+      <Route exact path="/personalizar" component={Personalizar} />
+      <Route exact path="/pedido" component={PedidoFinal} />
     </Switch>
   );
 }

@@ -1,0 +1,18 @@
+.item {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 15px;
+}
+
+.options.total {
+  margin: 0;
+}
+
+.options.total p {
+  font-weight: bold;
+  margin: 0px 0 5px 15px;
+}
+
+.options.total p:last-child {
+  margin-bottom: 30px;
+}

@@ -10,14 +10,14 @@ const index = () => {
           <h1>Escolha seu açaí</h1>
 
           <div className="options">
-            <p>SABOR:</p>
+            <p className="title">SABOR:</p>
             <div className="button">
               <button>Morango</button>
               <button>Banana</button>
               <button>Kiwi</button>
             </div>
 
-            <p>TAMANHO:</p>
+            <p className="title">TAMANHO:</p>
             <div className="button">
               <button>Pequeno (300ml)</button>
               <button>Médio (500ml)</button>

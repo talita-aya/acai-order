@@ -7,7 +7,7 @@ const index = () => {
         <h1>Personalize seu açaí</h1>
 
         <div className="options">
-            <p>PERSONALIZAÇÃO:</p>
+            <p className="title">PERSONALIZAÇÃO:</p>
             <div className="button">
               <button>Granola</button>
               <button>Paçoca</button>
