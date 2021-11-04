@@ -20,6 +20,7 @@
   font-weight: bold;
   color: #7B1FA2;
   font-size: 16px;
+  margin-bottom: 30px;
 }
 
 .options {
@@ -31,7 +32,8 @@
 .options p {
   font-weight: bold;
   color: #7B1FA2;
-  margin-bottom: 10px;
+  margin: 5px 0 10px 15px;
+
 }
 
 .button {
