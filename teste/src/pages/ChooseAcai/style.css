@@ -78,6 +78,9 @@
   margin: 0 10px;
 }
 
+.continue.large button {
+  width: 30%;
+}
  
 .continue button:hover {
   background-color: #fff;

@@ -27,7 +27,6 @@ const index = () => {
             <div className="continue">
               <button>Avançar</button>
             </div>
-           
           </div>
         </div>
       </div>
