@@ -1,8 +1,15 @@
 import React from 'react';
+import { useHistory } from 'react-router';
 
 import './style.css';
 
-const index = () => {
+function Index() {
+  var history = useHistory();
+
+  const Refazer = () => {
+    history.replace('/')
+  }
+
   return (
     <div className="container">
       <div className="content">
@@ -38,11 +45,11 @@ const index = () => {
         </div>
 
         <div className="continue large">
-          <button>Refazer pedido</button>
+          <button onClick={Refazer}>Refazer pedido</button>
         </div>
       </div>
     </div>
   );
 }
 
-export default index;
+export default Index;

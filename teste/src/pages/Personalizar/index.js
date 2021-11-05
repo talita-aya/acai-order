@@ -1,6 +1,13 @@
 import React from 'react';
+import { useHistory } from 'react-router';
 
-const index = () => {
+function Index() {
+  var history = useHistory();
+
+  const Finalizar = () => {
+    history.replace('/pedido');
+  }
+
   return (
     <div className="container">
       <div className="content">
@@ -16,11 +23,11 @@ const index = () => {
           </div>
 
           <div className="continue large">
-            <button>Finalizar pedido</button>
+            <button onClick={Finalizar}>Finalizar pedido</button>
           </div>
       </div>
     </div>
   )
 }
 
-export default index;
+export default Index;
