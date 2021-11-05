@@ -5,6 +5,7 @@ import Escolher from './pages/Escolher/index';
 import Personalizar from './pages/Personalizar/index';
 import PedidoFinal from './pages/PedidoFinal/index';
 
+
 function Routes() {
   return (
     <Switch>

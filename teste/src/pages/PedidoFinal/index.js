@@ -7,7 +7,7 @@ function Index() {
   var history = useHistory();
 
   const Refazer = () => {
-    history.replace('/')
+    history.replace('/');
   }
 
   return (

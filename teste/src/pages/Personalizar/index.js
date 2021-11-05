@@ -4,7 +4,7 @@ import { useHistory } from 'react-router';
 function Index() {
   var history = useHistory();
 
-  const Finalizar = () => {
+  const finalizar = () => {
     history.replace('/pedido');
   }
 
@@ -14,16 +14,16 @@ function Index() {
         <h1>Personalize seu açaí</h1>
 
         <div className="options">
-            <p className="title">PERSONALIZAÇÃO:</p>
-            <div className="button">
-              <button>Granola</button>
-              <button>Paçoca</button>
-              <button>Leite ninho</button>
-            </div>
+          <p className="title">PERSONALIZAÇÃO:</p>
+          <div className="button">
+            <button>Granola</button>
+            <button>Paçoca</button>
+            <button>Leite ninho</button>
           </div>
+        </div>
 
           <div className="continue large">
-            <button onClick={Finalizar}>Finalizar pedido</button>
+            <button onClick={finalizar}>Finalizar pedido</button>
           </div>
       </div>
     </div>
