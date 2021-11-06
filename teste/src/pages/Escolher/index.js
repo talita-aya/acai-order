@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router';
 
-import './style.css';
+import '../../styles/style.css';
 
 function Index() {
   const history = useHistory();
