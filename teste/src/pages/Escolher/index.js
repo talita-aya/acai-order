@@ -1,18 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router';
 
 import './style.css';
 
+
 function Index() {
   var history = useHistory();
+  const [flavor, setFlavor] = useState([]);
+  const [tam, setTam] = useState([]);
+  const [price, setPrice] = useState([]);
+  const [time, setTime] = useState([]);
+  const [enableButton, setEnableButton] = useState(false);
   
-  const Avancar = () => {
-    history.push('/personalizar');
+  const confirmButton = () => {
+    if(enableButton === true){
+      history.push('/personalizar')
+    }
   }
 
-  const selected = (id) => {
-    var buttonSelected = document.getElementById(id);
-    buttonSelected.classList.toggle("selected");
+  const selectedTam = (el) => {
+    setTam(el.name);
+    setPrice(el.preco);
+    setTime(el.tempo);
+    if(flavor !== '' && tam !== ''){
+      setEnableButton(true);
+    }
   }
 
   const sabor = [
@@ -34,17 +46,20 @@ function Index() {
     {
       id: '4',
       name: 'Pequeno (300ml)',
-      preco: '10.00'
+      preco: '10.00',
+      tempo: '5 minutos',
     },
     {
       id: '5',
       name: 'Médio (500ml)',
-      preco: '12.00'
+      preco: '12.00',
+      tempo: '7 minutos',
     },
     {
       id: '6',
       name: 'Grande (700ml)',
-      preco: '15.00'
+      preco: '15.00',
+      tempo: '9 minutos',
     },
   ]
 
@@ -57,9 +72,9 @@ function Index() {
         <p className="title">SABOR:</p>
         <div className="button-container">
           {sabor.map(el => (
-            <div className="button">
-              <input type="radio" name="sabor" value={el.name} id={el.name}/>
-              <label for={el.name}>{el.name}</label>
+            <div className="button" key={el.id}>
+              <input type="radio" name="sabor" value={el.name} id={el.name} onClick={() => setFlavor(el.name)}/>
+              <label htmlFor={el.name}>{el.name}</label>
             </div>
           ))}
         </div>
@@ -68,18 +83,24 @@ function Index() {
         <p className="title">TAMANHO:</p>
         <div className="button-container">
           {tamanho.map(el => (
-            <div className="button">
-              <input type="radio" name="tamanho" value={el.name} id={el.name}/>
-              <label for={el.name}>{el.name}</label>
+            <div className="button" key={el.id}>
+              <input type="radio" name="tamanho" value={el.name} id={el.name} onClick={() => selectedTam(el)}/>
+              <label htmlFor={el.name}>{el.name}</label>
             </div>
           ))}
         </div>
 
 
-        <div className="continue-button">
-          <input type="button" id="button" value="Avançar"/>
-        </div>
-        
+        {enableButton === false ?
+          <div className="continue-button">
+            <input type="button" id="button" value="Avançar" onClick={confirmButton}/>
+          </div>
+          : 
+          <div className="continue-button enabled">
+            <input type="button" id="button" value="Avançar" onClick={confirmButton}/>
+          </div>
+        }
+                
       </div>
     </div>
   );
