@@ -1,14 +1,18 @@
 import React from 'react';
 import { useHistory } from 'react-router';
 
-import Options from '../../components/Options';
 import './style.css';
 
 function Index() {
   var history = useHistory();
-
+  
   const Avancar = () => {
-    history.replace('/personalizar');
+    history.push('/personalizar');
+  }
+
+  const selected = (id) => {
+    var buttonSelected = document.getElementById(id);
+    buttonSelected.classList.toggle("selected");
   }
 
   const sabor = [
@@ -26,18 +30,21 @@ function Index() {
     },
   ] 
 
-  const list = [
+  const tamanho = [
     {
-      id: '1',
+      id: '4',
       name: 'Pequeno (300ml)',
+      preco: '10.00'
     },
     {
-      id: '2',
+      id: '5',
       name: 'Médio (500ml)',
+      preco: '12.00'
     },
     {
-      id: '3',
+      id: '6',
       name: 'Grande (700ml)',
+      preco: '15.00'
     },
   ]
 
@@ -45,29 +52,32 @@ function Index() {
     <div className="container">
       <div className="content">
         <h1>Escolha seu açaí</h1>
-        <p className="title">SABOR:</p>
 
-        <div className="button">
+
+        <p className="title">SABOR:</p>
+        <div className="button-container">
           {sabor.map(el => (
-            <Options
-              list={el}
-            />
+            <div className="button">
+              <input type="radio" name="sabor" value={el.name} id={el.name}/>
+              <label for={el.name}>{el.name}</label>
+            </div>
           ))}
         </div>
 
 
         <p className="title">TAMANHO:</p>
-
-        <div className="button">
-          {list.map(el => (
-            <Options
-              list={el}
-            />
+        <div className="button-container">
+          {tamanho.map(el => (
+            <div className="button">
+              <input type="radio" name="tamanho" value={el.name} id={el.name}/>
+              <label for={el.name}>{el.name}</label>
+            </div>
           ))}
         </div>
 
-        <div className="continue large">
-          <button onClick={Avancar}>Avançar pedido</button>
+
+        <div className="continue-button">
+          <input type="button" id="button" value="Avançar"/>
         </div>
         
       </div>
