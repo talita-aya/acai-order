@@ -5,6 +5,8 @@ import './style.css';
 
 function Index() {
   const history = useHistory();
+
+  //opções selecionadas na primeira + segunda tela
   const flavor = history.location.state.flavor;
   const tam = history.location.state.tam;
   const price = history.location.state.price;
@@ -12,8 +14,10 @@ function Index() {
   const addSelected = history.location.state.addSelected;
   const addPrice = history.location.state.addPrice;
 
+  //preço total
   const total = price + addPrice;
 
+  // botão para ir para a primeira página
   const confirmButton = () => {
     history.push('/');
   }
@@ -37,8 +41,8 @@ function Index() {
 
         <p className="title">PERSONALIZAÇÕES:</p>
         <div className="option-selected">
-          <p>- {addSelected}</p>
-          <p>R$ {addPrice}.00</p>
+          <p>- {addSelected.length === 0 ? "(Nenhuma personalização foi selecionada)" : addSelected}</p>
+          <p>R$ {addPrice.length === 0 ? "00" : addPrice}.00</p>
         </div>
 
         <p className="title">Valor total: R$ {total}.00</p>

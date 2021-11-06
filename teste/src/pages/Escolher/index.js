@@ -3,7 +3,6 @@ import { useHistory } from 'react-router';
 
 import './style.css';
 
-
 function Index() {
   const history = useHistory();
   const [flavor, setFlavor] = useState([]);
@@ -12,8 +11,9 @@ function Index() {
   const [time, setTime] = useState([]);
   const [enableButton, setEnableButton] = useState(false);
   
+  // botão para ir para a próxima página
   const confirmButton = () => {
-    if(enableButton === true){
+    if(enableButton === true){ //somente se as duas opções estiverem selecionadas
       history.push({
         pathname: "/personalizar",
         state: {
@@ -26,6 +26,7 @@ function Index() {
     }
   }
 
+  //tamanho selecionado
   const selectedTam = (el) => {
     setTam(el.name);
     setPrice(el.preco);
@@ -35,6 +36,8 @@ function Index() {
     }
   }
 
+
+  //opções para o sabor do açaí
   const sabor = [
     {
       id: '1',
@@ -50,6 +53,8 @@ function Index() {
     },
   ] 
 
+
+  //opções para o tamanho do açaí
   const tamanho = [
     {
       id: '4',
@@ -98,7 +103,8 @@ function Index() {
           ))}
         </div>
 
-
+        
+        {/* dois botões: um desativado e outro ativado */}
         {enableButton === false ?
           <div className="continue-button">
             <input type="button" id="button" value="Avançar" onClick={confirmButton}/>

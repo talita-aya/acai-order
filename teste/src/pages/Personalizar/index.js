@@ -4,6 +4,8 @@ import { useHistory } from 'react-router';
 
 function Index() {
   const history = useHistory();
+
+  // opções selecionadas na primeira tela
   const flavor = history.location.state.flavor;
   const tam = history.location.state.tam;
   const price = history.location.state.price;
@@ -11,11 +13,13 @@ function Index() {
   const [addSelected, setAddSelected] = useState([]);
   const [addPrice, setAddPrice] = useState([]);
 
+  // personalização escolhida
   const selectedAdd = (el) => {
     setAddSelected(el.name);
     setAddPrice(el.preco);
   }
 
+  // botão para ir para a próxima tela
   const confirmButton = () => {
     history.push({
       pathname: "/pedido",
@@ -30,6 +34,7 @@ function Index() {
     })
   }
 
+  //opções de personalização
   const add = [
     {
       id: '1',
