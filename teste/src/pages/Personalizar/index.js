@@ -1,17 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router';
 
 
 function Index() {
-  var history = useHistory();
+  const history = useHistory();
+  const flavor = history.location.state.flavor;
+  const tam = history.location.state.tam;
+  const price = history.location.state.price;
+  const time = history.location.state.time;
+  const [addSelected, setAddSelected] = useState([]);
+  const [addPrice, setAddPrice] = useState([]);
 
-  const finalizar = () => {
-    history.push('/pedido');
+  const selectedAdd = (el) => {
+    setAddSelected(el.name);
+    setAddPrice(el.preco);
   }
 
-  const selected = (id) => {
-    var buttonSelected = document.getElementById(id);
-    buttonSelected.classList.toggle("selected");
+  const confirmButton = () => {
+    history.push({
+      pathname: "/pedido",
+      state: {
+        flavor: flavor,
+        tam: tam,
+        price: price,
+        time: time,
+        addSelected: addSelected,
+        addPrice: addPrice,
+      }
+    })
   }
 
   const add = [
@@ -42,15 +58,15 @@ function Index() {
         <p className="title">PERSONALIZAÇÃO:</p>
         <div className="button-container">
           {add.map(el => (
-            <div className="button">
-              <input type="radio" name="add" value={el.name} id={el.name}/>
-              <label for={el.name}>{el.name}</label>
+            <div className="button" key={el.id}>
+              <input type="radio" name="add" value={el.name} id={el.name} onClick={() => selectedAdd(el)}/>
+              <label htmlFor={el.name}>{el.name}</label>
             </div>
           ))}
         </div>
         
         <div className="continue-button enabled">
-          <input type="button" id="button" value="Finalizar pedido"/>
+          <input type="button" id="button" value="Finalizar pedido" onClick={confirmButton}/>
         </div>
       </div>
     </div>

@@ -5,7 +5,7 @@ import './style.css';
 
 
 function Index() {
-  var history = useHistory();
+  const history = useHistory();
   const [flavor, setFlavor] = useState([]);
   const [tam, setTam] = useState([]);
   const [price, setPrice] = useState([]);
@@ -14,7 +14,15 @@ function Index() {
   
   const confirmButton = () => {
     if(enableButton === true){
-      history.push('/personalizar')
+      history.push({
+        pathname: "/personalizar",
+        state: {
+          flavor: flavor,
+          tam: tam,
+          price: price,
+          time: time,
+        }
+      })
     }
   }
 
