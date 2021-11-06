@@ -54,19 +54,19 @@ function Index() {
     {
       id: '4',
       name: 'Pequeno (300ml)',
-      preco: '10.00',
+      preco: 10,
       tempo: '5 minutos',
     },
     {
       id: '5',
       name: 'Médio (500ml)',
-      preco: '12.00',
+      preco: 12,
       tempo: '7 minutos',
     },
     {
       id: '6',
       name: 'Grande (700ml)',
-      preco: '15.00',
+      preco: 15,
       tempo: '9 minutos',
     },
   ]

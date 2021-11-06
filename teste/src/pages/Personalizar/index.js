@@ -34,18 +34,18 @@ function Index() {
     {
       id: '1',
       name: 'Granola',
-      preco: '3.00'
+      preco: 3
     },
     {
       id: '2',
       name: 'Paçoca',
-      preco: '3.00'
+      preco: 3
 
     },
     {
       id: '3',
       name: 'Leite ninho',
-      preco: '3.00'
+      preco: 3
 
     },
   ] 
