@@ -12,7 +12,7 @@
 > **OBS:** tenha certeza que está dentro da pasta 'teste' para executar os próximos comandos. Caso tal situação não se aplique a sua realidade, basta digitar:
 
 ```
-cd pomodoro
+cd teste
 ```
 
 #### Instalando as dependências:
